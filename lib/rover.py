@@ -1,5 +1,8 @@
-import re
+'''
+Rover class contains defination of each rover and contains method to display rover's current position and to run the rover.
+'''
 
+import re
 
 class Rover:
     def __init__(self, Id, x, y, head, p):
@@ -19,8 +22,10 @@ class Rover:
         print("Final position of Rover", self._id, "is", self.getPos(), self.getHead()+".\n")
 
     def runRover(self, ins, heading):
+        # Below code checks that the instruction sequence is not empty
         if (ins == ""):
             raise ValueError("Instruction sequence cannot be empty.")
+        #Below code checks that the instruction sequence is a string of only [LMR]
         pattern = re.compile("^[MRL]*$")
         shifts = [(0, 1), (1, 0), (0, -1), (-1, 0)]
         cur_head = heading.index(self._head)

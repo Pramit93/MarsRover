@@ -1,6 +1,10 @@
+'''
+The mainrun() function is the primary entry-point of the program. It takes all the input, checks the input format is 
+correct at each step and creates the Rover and Plateau objects.
+'''
+
 import plateau as pt
 import rover as rv
-
 
 def mainrun():
     print("Project X")
@@ -37,11 +41,13 @@ def mainrun():
                         x_org, y_org, head = input().strip().split()
                         x_org = int(x_org)
                         y_org = int(y_org)
+                        #below code checks whether the landing coordinate of the rover are within (0,0) and (x_plateau,y_plateau)
                         if (x_org < 0 or x_org > x_plateau) or (y_org < 0 or y_org > y_plateau):
-                            raise ValueError(
-                                "x,y co-ordinates of the rover must be within 0,0 and " + str(x_plateau) + "," + str(y_plateau))
+                            raise ValueError("x,y co-ordinates of the rover must be within 0,0 and " + str(x_plateau) + "," + str(y_plateau))
+                        #below code checks whether the heading of the rover is in ['N', 'E', 'S', 'W']
                         if head not in heading:
                             raise ValueError("Heading of the rover must be one among " + str(heading))
+                        #below code checks whether the landing coordinate of the rover is occupied or free
                         if p.isOccupied(x_org, y_org):
                             raise ValueError("Given co-ordinates already occupied by previous rovers")
                     except ValueError as e:
@@ -57,6 +63,8 @@ def mainrun():
                         except ValueError as e:
                             print(e)
                         finally:
+                            #the last position of the rover is recorded and blocked
+
                             p.occupied[r.getPos()] = 1
                             r.display()
                             break
