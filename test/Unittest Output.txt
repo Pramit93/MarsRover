@@ -1,0 +1,57 @@
+"C:\Program Files (x86)\Python36-32\python.exe" "C:\Program Files\JetBrains\PyCharm Community Edition 2017.2.4\helpers\pycharm\_jb_unittest_runner.py" --path C:/Users/prami/PycharmProjects/MarsRover/test/rovertest.py
+Testing started at 02:27 PM ...
+Launching unittests with arguments python -m unittest C:/Users/prami/PycharmProjects/MarsRover/test/rovertest.py in C:\Users\prami\PycharmProjects\MarsRover\test
+
+Size of the plateau is set to (x=5,y=5) at top right corner.
+
+TestCase 1
+----------
+Trying to place Rover at x=2,y=3 facing North.
+Instruction Sequence - LRMMRM
+Final position of Rover 1 is 3 5 E.
+
+TestCase 2
+----------
+Checking whether the grid (x=3,y=5) of the plateau is empty.
+The grid (x=3,y=5) of the plateau is occupied so a rover cannot be landed here.
+
+TestCase 3
+----------
+Trying to place Rover at x=2,y=3 facing North.
+Instruction Sequence - LRMMRM
+ERROR .... The position (3, 5) is already occupied so the rover got blocked.
+Final position of Rover 2 is 2 5 E.
+
+TestCase 4
+----------
+Trying to place Rover at x=2,y=3 facing North.
+Instruction Sequence - MMMRMMMLM
+ERROR .... The position (2, 5) is already occupied so the rover got blocked.
+Final position of Rover 3 is 2 4 N.
+
+TestCase 5
+----------
+Trying to place Rover at x=2,y=4 facing North.
+Instruction Sequence - RMMMLMM
+ERROR .... The Rover cannot be moved further N or it will fall off the edge.
+Final position of Rover 4 is 5 5 N.
+
+TestCase 6
+----------
+Trying to place Rover at x=1,y=1 facing North.
+Instruction Sequence - lmr
+Only values 'L', 'M' and 'R' are accepted!
+
+TestCase 7
+----------
+Trying to place Rover at x=1,y=1 facing North.
+Instruction Sequence - empty
+Instruction sequence cannot be empty.
+
+
+
+Ran 1 test in 0.010s
+
+OK
+
+Process finished with exit code 0
