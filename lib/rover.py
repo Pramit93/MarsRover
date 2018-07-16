@@ -47,7 +47,7 @@ class Rover:
                     # Below code checks if the rover's path is blocked or whether it might cross the edge
                     if self.p.isOccupied(x, y):
                         raise ValueError("ERROR .... The position "+str((x,y))+" is already occupied so the rover got blocked.")
-                    elif (x >= 0 and x <= self.p.x) and (y >= 0 and y <=self.p.y):
+                    elif (0 <= x <= self.p.x) and (0 <= y <= self.p.y):
                         self._x = x
                         self._y = y
                     else:
